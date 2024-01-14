@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Nuevo Auto</title>
+    <style>
+        body {
+            background-image: url('https://www.shutterstock.com/image-photo/cars-row-used-car-sales-600nw-2249753847.jpg'); /* Reemplaza con la URL de tu imagen */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0; /* Gray background color as fallback */
+            color: navy; /* Color del texto en azul marino */
+        }
+
+        h1 {
+            color: navy; /* Color del título en azul marino */
+        }
+
+        .numero-vehiculos {
+            font-weight: bold; /* Texto en negrita */
+            color: black; /* Color del texto en negro */
+            font-size: 1.2em; /* Tamaño de fuente un poco más grande */
+        }
+
+        ul {
+            list-style: none; /* Elimina los puntos de la lista */
+            padding: 0; /* Elimina el relleno predeterminado de la lista */
+        }
+
+        li {
+            font-weight: bold; /* Establece el texto en negrita */
+            color: black; /* Color del texto en negro */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4" >
+    <h1 class="text-center mb4- text-success"> AGREGAR NUEVO VEHICULO </h1>
+
+    <div class="row text-center">
+        <div class="col-md-2 mb-4 text-center">
+            <a href=" {%url 'inicio' %}" class="btn btn-primary mb-3"> <i class="fa-solid fa-house"></i>   Regresar</a>
+        </div>
+
+    </div>
+
+    <form method="POST">
+        <table class="table table-bordered border-success table-info">
+            <thead class="text-center">
+            <tr>
+                {{formaAuto}}
+            </tr>
+            </thead>
+        </table>
+
+
+
+        <button type="Submit" class="btn btn-danger mb-3"> <i class="fa-solid fa-download"></i>   Guardar</button>
+        {% csrf_token %}
+    </form>
+
+</body>
+</html>
